@@ -367,7 +367,7 @@ func commonInit(config *menderConfig, opts *runOptionsType) (*MenderPieces, erro
 		return nil, errors.New("failed to setup key storage")
 	}
 
-	dbstore := store.NewDBStore(*opts.dataStore)
+	dbstore := store.NewDirStore(*opts.dataStore)
 	if dbstore == nil {
 		return nil, errors.New("failed to initialize DB store")
 	}
